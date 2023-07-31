@@ -16,7 +16,6 @@ void mergeSort(int pData[], int l, int r)
 	mergeSort(pData, l, m);
 	mergeSort(pData, m + 1, r);
 
-	// Merge the two sorted subarrays
 	int n1 = m - l + 1;
 	int n2 = r - m;
 	int *L = (int *)malloc(sizeof(int) * n1);
@@ -92,7 +91,6 @@ void bubbleSort(int *pData, int n)
 		{
 			if (pData[j] > pData[j + 1])
 			{
-				// Swap elements
 				temp = pData[j];
 				pData[j] = pData[j + 1];
 				pData[j + 1] = temp;
@@ -117,7 +115,6 @@ void selectionSort(int *pData, int n)
 			}
 		}
 
-		// Swap elements
 		temp = pData[i];
 		pData[i] = pData[minIndex];
 		pData[minIndex] = temp;
@@ -135,7 +132,7 @@ int parseData(char *inputFileName, int **ppData)
 	{
 		fscanf(inFile, "%d\n", &dataSz);
 		*ppData = (int *)malloc(sizeof(int) * dataSz);
-		// Implement parse data block
+
 		for (int i = 0; i < dataSz; i++)
 		{
 			fscanf(inFile, "%d", &(*ppData)[i]);
